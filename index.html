@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque Pyrénéenne</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Bibliothèque Pyrénéenne</h1>
+    <div class="library-management">
+        <div class="current-library">
+            <span>Bibliothèque actuelle : </span>
+            <span id="currentLibraryName" class="library-name">Aucune</span>
+       </div>
+       <div class="library-controls">
+           <select id="librarySelect">
+               <option value="">-- Choisir une bibliothèque --</option>
+           </select>
+           <button id="newLibraryBtn">Nouvelle bibliothèque</button>
+           <button id="renameLibraryBtn">Renommer</button>
+            <button id="deleteLibraryBtn">Supprimer</button>
+        </div>
+    </div>
+    
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Rechercher un livre...">
+    </div>
+    
+    <div class="controls" id="mainControls">
+        <button id="addEntryBtn">Nouvelle entrée</button>
+        <button id="exportBtn">Exporter les données</button>
+        <button id="importBtn">Importer les données</button>
+        <input type="file" id="importFile" accept=".json" class="file-input">
+    </div>
+    
+    <div class="status-message" id="statusMessage"></div>
+    
+    <table id="bookTable">
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Auteur</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Commentaires</th>
+                <th>Photo</th>
+                <th class="supprimer-column">Supprimer</th>
+            </tr>
+        </thead>
+        <tbody id="bookTableBody">
+            <!-- Les entrées de la bibliothèque seront ajoutées ici dynamiquement -->
+        </tbody>
+    </table>
+
+    <!-- Modal pour afficher les images en grand -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="expandedImg">
+    </div>
+
+    <!-- Modal pour les dialogues de saisie -->
+    <div id="dialogModal" class="dialog-modal">
+        <div class="dialog-content">
+            <div id="dialogTitle" class="dialog-title"></div>
+            <input type="text" id="dialogInput" class="dialog-input">
+            <div class="dialog-buttons">
+                <button id="dialogCancel" class="dialog-btn dialog-btn-cancel">Annuler</button>
+                <button id="dialogOk" class="dialog-btn dialog-btn-ok">OK</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Script avec support des modules ES6 -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
